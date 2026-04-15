@@ -74,6 +74,7 @@ header img{
     background-color: #484848;
     border-top: 2px rgb(122, 122, 122) solid ;
     border-bottom: 2px rgb(122, 122, 122) solid ;
+    text-align: center;
 }
 .trust .container{
     display: flex;
