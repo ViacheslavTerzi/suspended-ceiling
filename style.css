@@ -1,5 +1,8 @@
-element {
-  --element_size: ;
+:root {
+    --black: #0F0F0F;
+    --dark: #1A1A1A;
+    --gold: #FFD700;
+    --gold-light: #FFCC33;
 }
 
 *{
@@ -7,13 +10,14 @@ element {
     padding: 0;
     box-sizing: border-box;
 }
-
 html{
     scroll-behavior: smooth;
 }
 
 body{
-    
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--black);
+    color: #fff;
 }
 
 .container{
@@ -22,7 +26,70 @@ body{
     
 }
 
-button{
+.btn-luxe {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  margin: .5rem;
+}
+
+.btn-luxe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.7s;
+}
+
+.btn-luxe:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.35);
+}
+
+.btn-luxe:hover::before {
+  left: 300%;
+}
+
+/* Золотая кнопка */
+.btn-gold {
+  background: linear-gradient(135deg, #FFD700, #FFCC33);
+  color: #000;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FFCC33, #FFD700);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+}
+
+/* Кнопка с обводкой */
+.btn-outline-gold {
+  background: transparent;
+  color: white;
+  border: 2px solid #FFD700;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: #FFCC33;
+  color: #FFD700;
+}
+
+
+/* button{
     text-align: center;
     transition: 0.5s;
     background-size: 200% auto;
@@ -35,14 +102,24 @@ button{
 
 button:hover{
     background-position: right center;
-}
+} */
 
 header{
     padding: 10px 2rem;
-    background-color: #484848;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+    z-index: 1000;
+    transition: all 0.4s ease;
 }
 
 header img{
@@ -58,15 +135,34 @@ header img{
     display: flex;
     align-items: center;
     justify-content: start;
-    
+    overflow: hidden;
 }
 
 .hero-bg{
-    position: absolute;
+    
     inset: 0;
-    background: url("https://1eight.co.uk/wp-content/uploads/2016/12/bg-02-e1636403683292.jpg") center 40% / cover no-repeat;
+    
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: url("img/hero_bg.jpg") center 30% / cover no-repeat;
+    
+    background-color: rgba(15, 15, 15, 0.65);     
+    background-blend-mode: multiply;
+    transition: all .7s ease-in-out;
     
 }
+
+.hero:hover .hero-bg {
+    transform: scale(1.02);
+}
+
 .hero .container{
     position: relative;
     z-index: 2;
@@ -74,11 +170,12 @@ header img{
     
 }
 .hero .container h1{
-    color: antiquewhite;
+    font-family: "Cormorant Garamond", serif;
+    
 }
 
 .hero .container h2{
-    color: burlywood;
+    color: var(--gold-light);
 }
 
 .hero-buttons{
@@ -86,33 +183,105 @@ header img{
     margin-top: 1rem;
 }
 .hero-buttons button{
-    margin: 0 2px 0 0;
+    margin: 0 1rem 0 0;
 }
 
-.trust{
-    background-color: #484848;
-    border-top: 2px rgb(122, 122, 122) solid ;
-    border-bottom: 2px rgb(122, 122, 122) solid ;
-    text-align: center;
+.information-box{
+   margin-top: 5rem;
 }
-.trust .container{
+
+
+
+.information-box .container{
+    
+}
+
+.information-box .container h2{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.types{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
 }
 
-.block{
-    width: 25%;
+.types-title{
+    font-size: 35px;
+    font-family: "Cormorant Garamond", serif;
+  
+}
+.types-title span{
+    color: var(--gold-light);
+}
+
+.image1{
+    background: url("img/matte.jpg") center 10% / cover no-repeat;
+}
+.image2{
+    background: url("img/glossy.jpg") center 25% / cover no-repeat;
+}
+.image3{
+    background: url("img/satin.jpg") center 20% / cover no-repeat;
+}
+.type.image{
+    
+    
+    background-color: rgba(15, 15, 15, 0.35);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+.type.image:hover{
+    background-color: rgba(15, 15, 15, 0.05);
+}
+
+.type{
+    width: 33%;
+    height: 30vh;
+    
     padding: 3rem;
-    text-align: center;
-    font-size: 25px;
+    
+    
+    margin-bottom: 7px;
+    border-radius: 10px;
+    border: 2px solid #FFD700;
+    
+    transition: all .6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
-.border-rigt{
-    border-right: 2px rgb(122, 122, 122) solid ;
+
+.type h3{
+    
+    color: #fff;
+    margin-bottom: .2rem;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
 }
-.border-left{
-    border-left: 2px rgb(122, 122, 122) solid ;
+.type h5{
+    
+    color: #d9d9d9;
+    transition: all .6s ease-in-out;
 }
+
+.type:hover h5{
+    color: var(--gold);
+}
+
+
+.type:hover {
+    
+    border-color: #FFCC33;
+    
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.35);
+}
+
+
+
 
 
 .reviews .container{
