@@ -8,32 +8,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-
-    <title>Site</title>
+    <link rel="shortcut icon" href="/img/logo-icon.jpg" type="image/png">
+    <title>Decken-Werk</title>
 </head>
 <body>
     <header>
-        <img src="https://play-lh.googleusercontent.com/Fro4e_osoDhhrjgiZ_Y2C5FNXBMWvrb4rGpmkM1PDAcUPXeiAlPCq7NeaT4Q6NRUxRqo" alt="main logo">
+        <a href="#top"><img src="img/logo-white.png" alt="main logo"></a>
 
         <nav>
-            <select name="language">
+            <select name="language" class="sleect-language">
                 <option value="1">deu</option>
                 <option value="2">eng</option>
             </select>
-            <button class="button btn-luxe">Button 1</button>
-            <button class="button btn-luxe btn-outline-gold">Button 2</button>
+            <a href="#calculation"><button class="button btn-luxe btn-outline-gold">Calculate</button></a>
+            <a href="https://api.whatsapp.com/send?phone=380931203320" target="_blank" rel="noopener noreferrer"><button class="button btn-luxe btn-outline-dark" >Contact</button></a>
         </nav>
     </header>
 
     
-    <section class="hero">
+    <section id="top" class="hero">
         <div class="hero-bg"></div>
         <div class="container">
             <h1>Name of Company</h1>
             <h2>Subtext</h2>
             <div class="hero-buttons">
-                <a href="#calculation"><button class="button btn-luxe btn-outline-gold">Botton to calculate</button></a>
-                <button class="button btn-luxe" >Button to contact</button>
+                <a href="#calculation"><button class="button btn-luxe btn-outline-gold">Calculate</button></a>
+                <a href="https://api.whatsapp.com/send?phone=380931203320" target="_blank" rel="noopener noreferrer"><button class="button btn-luxe btn-outline-dark" >Contact</button></a>
                 
             </div>
             
@@ -52,8 +52,8 @@
                 <div class="type image image1"> <h3 class="type-name">Matte</h3> <h5 class="type-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit</h5> </div>
                 <div class="type image image2"><h3 class="type-name">Glossy</h3> <h5 class="type-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit</h5></div>
                 <div class="type image image3"><h3 class="type-name">Satin</h3> <h5 class="type-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit</h5></div>
-                <div class="type image image2"><h3 class="type-name">Matte</h3> <h5 class="type-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit</h5></div>
-                <div class="type image image3"><h3 class="type-name">Matte</h3> <h5 class="type-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit</h5></div>
+                <div class="type image image2"><h3 class="type-name">Glossy</h3> <h5 class="type-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit</h5></div>
+                <div class="type image image3"><h3 class="type-name">Satin</h3> <h5 class="type-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit</h5></div>
                 <div class="type image image1"><h3 class="type-name">Matte</h3> <h5 class="type-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit</h5></div>
                 
             </div>
@@ -63,14 +63,14 @@
     <section class="reviews">
         <div class="container">
 
-            <h2>Reviews Title</h2>
+            <h2>Example <span>of work</span></h2>
 
             <div class="reviews-blocks">
-                <div class="review"></div>
-                <div class="review"></div>
-                <div class="review"></div>
-                <div class="review"></div>
-                <div class="review"></div>
+                <div class="review photo1"></div>
+                <div class="review photo2"></div>
+                <div class="review photo3"></div>
+                <div class="review photo4"></div>
+                <div class="review photo5"></div>
             </div>
             
 
@@ -78,7 +78,7 @@
     </section>
 
 
-    <section class="calculation">
+    <!-- <section class="calculation">
 
         <div class="container">
 
@@ -107,12 +107,95 @@
 
         </div>
 
-    </section>
+    </section> -->
+
+
+
+    <div class="container">
+
+        <h2 class="calculation-title">Price <span>calculation</span></h2>
+
+        <div id="calculation" class="calculator-card">
+            <h2 class="calc-title">Рассчитайте стоимость вашего потолка</h2>
+            <p class="calc-subtitle">Мгновенный расчёт онлайн • Полная цена за 30 секунд</p>
+
+            <div class="calc-container">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label>Тип потолка</label>
+                        <select id="ceiling-type" class="ceiling-type">
+                            <option value="10">Глянцевый</option>
+                            <option value="9">Матовый</option>
+                            <option value="11">Сатиновый</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Цвет / Фактура</label>
+                        <select id="ceiling-texture" class="ceiling-texture">
+                            <option value="1">Белый Глянцевый</option>
+                            <option value="1.2">Цветной</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" id="length" class="length" placeholder="Длина помещения (м)">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" id="width" class="width" placeholder="Ширина помещения (м)">
+                    </div>
+                </div>
+
+                <div class="calc-result">
+                    <p>Ваша примерная стоимость</p>
+                    <div class="price-display">
+                        от <span id="price-per-m" class="total-price">0</span> Fr
+                    </div>
+                    <div class="total-info">
+                        Итоговая сумма: <span id="total-sum">0</span> <br>
+                        Площадь: <span id="total-area" class="total-area">0</span> м²
+                    </div>
+                    <!-- <button class="btn-exact">Получить точный расчёт</button> -->
+                </div>
+            </div>
+
+            <div class="calc-options">
+                <label class="checkbox-container checkLight">Дополнительная LED-подсветка по периметру
+                    <input type="checkbox" id="opt-led" value="5000">
+                    <span class="checkmark "></span>
+                </label>
+                <label class="checkbox-container checkMulti">Многоуровневый дизайн
+                    <input type="checkbox" id="opt-multi" value="10000">
+                    <span class="checkmark "></span>
+                </label>
+                <label class="checkbox-container checkPhoto">Фотопечать
+                    <input type="checkbox" id="opt-photo" value="3000">
+                    <span class="checkmark "></span>
+                </label>
+                <label class="checkbox-container">Монтаж с выездом специалиста
+                    <input type="checkbox" checked disabled>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <button class="btn-main" >Рассчитать стоимость</button>
+        
+        
+    </div>
+        
+    </div>
+    
+
+
+
+
+
     
     
     <footer>
 
-        <h4>Site 2026</h4>
+        <h4>Decken-Werk 2026</h4>
 
     </footer>
 
